@@ -1,0 +1,24 @@
+<div class="hero-section" style = "margin-bottom: 20px">
+    <div class="hero-section-text">
+        <h1>NY Times Scraper</h1>
+        <h5>Stay updated on current events!</h5>
+        <button id = "scrapeBtn" class="button">Scrape</button>
+        <a id = "savedBtn" href = "/saved" class="button">Saved</a>
+    </div>
+</div>
+
+<div class = "grid-x align-center">
+
+
+    {{#each articles}}
+
+    <div class="callout small">
+        <a class = "button linkedArt" href="https://www.nytimes.com{{link}}">Full Article</a>
+        <button class = "button saveArt" data-id = "{{_id}}">Save</button>
+        <h5>{{title}}</h5> 
+    </div>
+
+    {{/each}}
+
+
+</div>

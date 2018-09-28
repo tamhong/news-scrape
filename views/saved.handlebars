@@ -1,0 +1,48 @@
+<div class="hero-section" style = "margin-bottom: 20px">
+    <div class="hero-section-text">
+        <h1>NY Times Scraper</h1>
+        <h5>Stay updated on current events!</h5>
+        <a id = "backToAll" href = "/" class="button">All Articles</a>
+    </div>
+</div>
+
+<div class = "grid-x align-center">
+
+        <div class="tiny reveal align-center" id="exampleModal1" data-reveal>
+        
+            <h4> Notes </h4>
+
+            <div id = "existNote" class="callout small" style = "width: 100%"></div>
+
+            <h4> New Note</h4>
+            <form id = "createNote">
+
+                <input id = "articleId" type = "hidden" value = "">
+
+                <input id = "noteTitle" type = "text" placeholder = "Title">
+
+                <textarea id = "noteBody" placeholder="Write your note here..."></textarea>
+
+                <button class = "button" id = "saveNote" type = "submit">Save Note</button>
+            </form>
+
+        </div>
+
+    {{#each articles}}
+
+        <div class="callout small">
+            <a class = "button linkedArt" href="https://www.nytimes.com{{link}}">Full Article</a>
+            <button class = "button noteBtn" data-id = "{{_id}}">Notes</button>
+            <button class = "button unsave" data-id = "{{_id}}">Unsave</button>
+            <h5>{{title}}</h5> 
+
+        </div>
+
+    {{/each}}
+
+
+</div>
+
+
+ 
+
