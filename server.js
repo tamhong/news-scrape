@@ -36,7 +36,12 @@ app.set("view engine", "handlebars");
 
 //Connect to MongoDB
 
-mongoose.connect("mongodb://localhost/news_scraper_db", { useNewUrlParser: true});
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/news_scraper_db";
+
+// Set mongoose to leverage built in JavaScript ES6 Promises
+// Connect to the Mongo DB
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true});
 
 app.get("/scrape", function (req, res) {
     request("https://www.nytimes.com/", function(error, response, html){
@@ -178,7 +183,7 @@ app.delete ("/notes/:id", function (req, res) {
 });
 
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || PORT, function() {
     console.log(`App running on port ${PORT}!`)
 });
 
