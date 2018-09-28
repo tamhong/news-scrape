@@ -1,21 +1,21 @@
 //Require NPM Packages
 
-const express = require ("express");
-const bodyParser = require ("body-parser");
-const exphbs = require("express-handlebars");
-const mongoose = require ("mongoose");
-const cheerio = require ("cheerio");
-const request = require ("request");
+var express = require ("express");
+var bodyParser = require ("body-parser");
+var exphbs = require("express-handlebars");
+var mongoose = require ("mongoose");
+var cheerio = require ("cheerio");
+var request = require ("request");
 
 //Require Mongoose Models
 
 var db = require("./models");
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 //Initialize Express
 
-const app = express();
+var app = express();
 
 //Body Parser for Form Submissions
 
