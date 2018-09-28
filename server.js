@@ -11,7 +11,7 @@ const request = require ("request");
 
 var db = require("./models");
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //Initialize Express
 
@@ -183,7 +183,7 @@ app.delete ("/notes/:id", function (req, res) {
 });
 
 
-app.listen(process.env.PORT || PORT, function() {
+app.listen(PORT, function() {
     console.log(`App running on port ${PORT}!`)
 });
 
